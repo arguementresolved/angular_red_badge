@@ -25,11 +25,14 @@ import { HeaderComponent } from './component/header/header.component';
 import { LoginComponent } from './component/userCrud/login/login.component';
 import { RegisterComponent } from './component/userCrud/register/register.component';
 import { AuthService } from './services/auth.service';
+import { BattlesService } from './services/battles.service';
+import { BattleIndexComponent } from './components/battle/battle-index/battle-index.component';
 
 
 const routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'battle', component: BattlePageComponent },
+  { path: 'battles', component: BattleIndexComponent },
   { path: 'nerdFight', component: NerdFightComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
@@ -45,7 +48,8 @@ const routes = [
     NerdFightComponent,
     HeaderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    BattleIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +68,8 @@ const routes = [
     ReactiveFormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    BattlesService
   ],
 
   bootstrap: [AppComponent]
