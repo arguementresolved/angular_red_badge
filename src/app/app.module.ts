@@ -25,6 +25,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { LoginComponent } from './component/userCrud/login/login.component';
 import { RegisterComponent } from './component/userCrud/register/register.component';
 import { AuthService } from './services/auth.service';
+import { CommentsService } from './services/comments.service';
 
 
 const routes = [
@@ -64,7 +65,8 @@ const routes = [
     ReactiveFormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    CommentsService
   ],
 
   bootstrap: [AppComponent]
