@@ -7,6 +7,7 @@ const ApiUrl = 'https://redbadgegroup3-api.herokuapp.com/';
 export class CommentsService {
 
   constructor(private _http: HttpClient) { }
+   }
 
   getComments(){
     return this._http.get('${ApiUrl}/comments', { headers: this.getHeaders()})

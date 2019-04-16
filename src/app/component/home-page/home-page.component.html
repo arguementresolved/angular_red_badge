@@ -13,11 +13,13 @@
 
     <div class="container mt-2">
         <div class="row">
-            <div class="col-sm"></div>
-            <div class="col-sm">
-                <h3>Detail: lkasdfj;lkafj;lkasjf;dlajdsfl;kjasdf;lkfj;alksdfja;slkjf;laksjf;alskjf</h3>
+            <div class="col-3"></div>
+            <div class="col-6">
+                <h3>Have you ever wondered which super hero or powerful character would win in a fight against
+                    each other? Well this is the perfect tool for you just head over to the fight page and get
+                    started with over 700 characters to choose from!</h3>
             </div>
-            <div class="col-sm"></div>
+            <div class="col-3"></div>
         </div>
     </div>
 
@@ -27,8 +29,10 @@
                 <div>
                     <div>
                         <h3>user recents if logged in or random fights</h3>
-                        <p>
-                            *ngIf=user.loggedIn .recentFights()
+                        <p *ngIf='loggedInCheck'>
+                            recentFights()
+                        </p>
+                        <p *ngIf='!loggedInCheck'>
                             else randomFights()
                         </p>
                     </div>
@@ -46,7 +50,7 @@
     <div class="container fixed-bottom mb-2">
         <div class="row">
             <div class="col-12 mt-4">
-                <button class="btn btn-primary nerdFight" routerLink="/battle">Nerd Fight!</button>
+                <button class="btn btn-primary nerdFight" routerLink="/battle">Fight!</button>
             </div>
         </div>
     </div>
