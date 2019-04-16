@@ -1,6 +1,6 @@
 
 
-export interface BattlesID {
+export interface Battle {
     k: string;
     l: string;
 }
