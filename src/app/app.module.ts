@@ -26,7 +26,7 @@ import { LoginComponent } from './component/userCrud/login/login.component';
 import { RegisterComponent } from './component/userCrud/register/register.component';
 import { AuthService } from './services/auth.service';
 import { BattlesService } from './services/battles.service';
-import { BattleIndexComponent } from './components/battle/battle-index/battle-index.component';
+import { BattleIndexComponent } from './component/battle/battle-index/battle-index.component';
 import { CommentsService } from './services/comments.service';
 
 
@@ -71,7 +71,7 @@ const routes = [
   ],
   providers: [
     AuthService,
-    BattlesService
+    BattlesService,
     CommentsService
   ],
 

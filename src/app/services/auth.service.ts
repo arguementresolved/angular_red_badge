@@ -8,8 +8,8 @@ import { Observable, Subject } from 'rxjs';
 import { LoginType } from '../models/login';
 // import { userInfo } from 'os';
 
-// const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
-const apiUrl = 'http://127.0.0.1:5000';
+const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
+// const apiUrl = 'http://127.0.0.1:5000';
 
 @Injectable()
 
@@ -27,14 +27,14 @@ export class AuthService {
   login(loginInfo: LoginType) {
     return this._http.post(`${apiUrl}/api/v1/users/login`, loginInfo).subscribe( (token: MyToken) => {
       this.userInfo = token;
-      localStorage.setItem('id_token', token.access_token);
+      localStorage.setItem('id_token', token.token);
       this.isLoggedIn.next(true);
       this._router.navigate(['/']);
     });
   }
 
-  currentUser(): Observable<Object> {
-    if (!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(false)); }
+  currentUser(): Observable<object> {
+    if (!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(null)); }
 
     return this._http.get(`${apiUrl}/api/Account/UserInfo`, { headers: this.setHeader() });
   }
