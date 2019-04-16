@@ -27,6 +27,8 @@ import { RegisterComponent } from './component/userCrud/register/register.compon
 import { AuthService } from './services/auth.service';
 import { BattlesService } from './services/battles.service';
 import { BattleIndexComponent } from './components/battle/battle-index/battle-index.component';
+import { CommentsService } from './services/comments.service';
+
 
 
 const routes = [
@@ -70,6 +72,7 @@ const routes = [
   providers: [
     AuthService,
     BattlesService
+    CommentsService
   ],
 
   bootstrap: [AppComponent]

@@ -11,8 +11,9 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 )
 export class BattlePageComponent implements OnInit {
 
+  private _registerForm: FormGroup;
 
-  constructor(_form: FormBuilder) {
+  constructor(private _form: FormBuilder) {
     this.createForm();
    }
 
@@ -20,7 +21,7 @@ export class BattlePageComponent implements OnInit {
   }
 
   createForm() {
-    this._registerForm = group({
+    this._registerForm = this._form.group({
       fighter1: new FormControl,
       fighter2: new FormControl
     });
