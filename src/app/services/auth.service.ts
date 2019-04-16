@@ -6,7 +6,7 @@ import { MyToken } from '../models/token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { LoginType } from '../models/login';
-// import { userInfo } from 'os';
+import { userModel } from '../models/user';
 
 const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
 // const apiUrl = 'http://127.0.0.1:5000';
@@ -33,21 +33,26 @@ export class AuthService {
     });
   }
 
-  currentUser(): Observable<object> {
-    if (!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(null)); }
-
-    return this._http.get(`${apiUrl}/api/Account/UserInfo`, { headers: this.setHeader() });
-  }
-
   logout() {
     localStorage.clear();
     this.isLoggedIn.next(false);
-
     this._http.post(`${apiUrl}/api/v1/users/logout`, { headers: this.setHeader() } );
     this._router.navigate(['/login']);
   }
 
   private setHeader(): HttpHeaders {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+  }
+
+  getUser() {
+    return this._http.get(`${apiUrl}/api/v1/users/all`, {headers: this.setHeader()});
+  }
+
+  loggedInCheck() {
+    if (localStorage.getItem('id_token')) {
+      this.isLoggedIn.next(true);
+      return true; } else {
+      this.isLoggedIn.next(false);
+      return false; }
   }
 }
