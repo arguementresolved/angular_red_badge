@@ -5,7 +5,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MyToken } from '../models/token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { LoginType } from '../models/login';
+// import { userInfo } from 'os';
 
+// const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
 const apiUrl = 'http://127.0.0.1:5000';
 
 @Injectable()
@@ -18,14 +21,11 @@ export class AuthService {
   constructor(private _http: HttpClient, private _router: Router) { }
 
   register(regUserData: RegisterUser) {
-    return this._http.post(`${apiUrl}/api/v1/users`, regUserData);
+    return this._http.post(`${apiUrl}/api/v1/users/`, regUserData);
   }
 
-  login(loginInfo) {
-    const str =
-      `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
-
-    return this._http.post(`${apiUrl}/api/v1/users/login`, str).subscribe( (token: MyToken) => {
+  login(loginInfo: LoginType) {
+    return this._http.post(`${apiUrl}/api/v1/users/login`, loginInfo).subscribe( (token: MyToken) => {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
