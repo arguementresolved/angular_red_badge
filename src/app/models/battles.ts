@@ -1,5 +1,6 @@
 
-// export interface BattlesID {
-//     k: any;
-//     l: any;
-// }
+
+export interface Battle {
+    k: string;
+    l: string;
+}
