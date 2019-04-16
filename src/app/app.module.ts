@@ -26,6 +26,7 @@ import { LoginComponent } from './component/userCrud/login/login.component';
 import { RegisterComponent } from './component/userCrud/register/register.component';
 import { AuthService } from './services/auth.service';
 import { CommentsService } from './services/comments.service';
+import { CommentsIndexComponent } from './components/comments/comments-index/comments-index.component';
 
 
 const routes = [
@@ -34,6 +35,7 @@ const routes = [
   { path: 'nerdFight', component: NerdFightComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'comment', component: CommentsIndexComponent },
   { path: '**', component: HomePageComponent }
 ];
 
@@ -46,7 +48,8 @@ const routes = [
     NerdFightComponent,
     HeaderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CommentsIndexComponent
   ],
   imports: [
     BrowserModule,
