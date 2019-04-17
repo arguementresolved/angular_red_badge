@@ -7,18 +7,21 @@ import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { LoginType } from '../models/login';
 import { userModel } from '../models/user';
+import { map } from 'rxjs/operators';
 
-const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
-// const apiUrl = 'http://127.0.0.1:5000';
+// const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
+const apiUrl = 'http://127.0.0.1:5000';
 
 @Injectable()
 
 export class AuthService {
   userInfo: MyToken;
+  userModel: userModel;
   isLoggedIn = new Subject<boolean>();
 
 
   constructor(private _http: HttpClient, private _router: Router) { }
+
   register(regUserData: RegisterUser) {
     return this._http.post(`${apiUrl}/api/v1/users/`, regUserData);
   }

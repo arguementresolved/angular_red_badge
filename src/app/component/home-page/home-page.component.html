@@ -1,4 +1,14 @@
 
+
+<div>
+    <h1>{{username}}</h1>
+    <ul>
+        <li *ngFor='let user of users'>
+            {{user.username}} {{user.email}}
+        </li>
+    </ul>
+</div>
+
 <div>
 
     <div class="container mt-3">
