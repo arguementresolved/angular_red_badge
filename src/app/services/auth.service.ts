@@ -19,7 +19,6 @@ export class AuthService {
 
 
   constructor(private _http: HttpClient, private _router: Router) { }
-
   register(regUserData: RegisterUser) {
     return this._http.post(`${apiUrl}/api/v1/users/`, regUserData);
   }
@@ -37,7 +36,7 @@ export class AuthService {
     localStorage.clear();
     this.isLoggedIn.next(false);
     this._http.post(`${apiUrl}/api/v1/users/logout`, { headers: this.setHeader() } );
-    this._router.navigate(['/login']);
+    this._router.navigate(['/']);
   }
 
   private setHeader(): HttpHeaders {
