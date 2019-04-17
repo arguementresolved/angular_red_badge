@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CommentsService } from '../../../services/comments.service';
-import { Comment } from '../../../models/comment'
 
 
 @Component({
@@ -10,11 +9,7 @@ import { Comment } from '../../../models/comment'
 })
 export class CommentsIndexComponent implements OnInit {
 
-  constructor(private _commentsService: CommentsService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this._commentsService.getComments().subscribe((comments: Comment[])=>{
-    });
+  ngOnInit() {}
   }
-
-}
