@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { template } from '@angular/core/src/render3';
-
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
@@ -11,7 +9,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 )
 export class BattlePageComponent implements OnInit {
 
-  private _registerForm: FormGroup;
+  private _fighters: FormGroup;
 
   constructor(private _form: FormBuilder) {
     this.createForm();
@@ -21,13 +19,13 @@ export class BattlePageComponent implements OnInit {
   }
 
   createForm() {
-    this._registerForm = this._form.group({
+    this._fighters = this._form.group({
       fighter1: new FormControl,
       fighter2: new FormControl
     });
-
   }
+
   onSubmit() {
-    console.log(this._registerForm.value);
+    console.log(this._fighters.value);
   }
 }

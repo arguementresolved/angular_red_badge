@@ -7,14 +7,16 @@ import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { LoginType } from '../models/login';
 import { userModel } from '../models/user';
+import { map } from 'rxjs/operators';
 
-const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
-// const apiUrl = 'http://127.0.0.1:5000';
+// const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
+const apiUrl = 'http://127.0.0.1:5000';
 
 @Injectable()
 
 export class AuthService {
   userInfo: MyToken;
+  userModel: userModel;
   isLoggedIn = new Subject<boolean>();
 
 
@@ -37,7 +39,7 @@ export class AuthService {
     localStorage.removeItem('currentUser');
     this.isLoggedIn.next(false);
     this._http.post(`${apiUrl}/api/v1/users/logout`, { headers: this.setHeader() } );
-    this._router.navigate(['/login']);
+    this._router.navigate(['/']);
   }
 
   private setHeader(): HttpHeaders {
