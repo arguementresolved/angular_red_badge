@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-comments-index',
@@ -7,7 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentsIndexComponent implements OnInit {
 
-  constructor() { }
+  private _comment: FormGroup;
 
-  ngOnInit() {}
+  constructor(private _form: FormBuilder) {
+    this.createForm();
+   }
+
+  ngOnInit() {
+
   }
+  createForm(){
+    this._comment = this._form.group({
+      comment: new FormControl
+    });
+  }
+
+  onSubmit() {
+    console.log(this._comment.value)
+  }
+}
