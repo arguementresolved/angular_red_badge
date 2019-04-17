@@ -10,7 +10,5 @@ export class HomePageComponent implements OnInit {
 
   constructor(private _authService: AuthService) { }
 
-  ngOnInit() {
-    this._authService.loggedInCheck();
-  }
+  ngOnInit() {}
 }

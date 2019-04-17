@@ -7,11 +7,5 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  isLoggedin = false;
-
-  ngOnInit() {
-    if (localStorage.getItem('id_token')) {
-      this.isLoggedin = true; } else {
-      this.isLoggedin = false; }
-  }
+  ngOnInit() {}
 }
