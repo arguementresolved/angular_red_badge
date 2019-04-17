@@ -12,36 +12,18 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/nerdFight">Rage</a>
       </li>
-<<<<<<< HEAD
         <li class="nav-item">
-            <a class="nav-link" routerLink="/home">Logout</a>
+          <div *ngIf='_authService.loggedInCheck();'>
+            <a class="nav-link" routerLink="/logout">Logout</a></div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLink="/login">Login</a>
+          <div *ngIf='!_authService.loggedInCheck();'>
+            <a class="nav-link" routerLink="/login">Login</a></div>
           </li>
           <li class="nav-item">
-              <a class="nav-link" routerLink="/register">Register</a>
+            <div *ngIf='!_authService.loggedInCheck();'>
+              <a class="nav-link" routerLink="/register">Register</a></div>
             </li>
-=======
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/logout">Logout</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/login">Login</a>
-
-<mat-toolbar color="primary">
-    <ul class="nav">
-      <li class="nav-item">
-        <h2 routerLink="/home"> Hero vs Hero</h2>
-      </li>
-      <li class=" nav-item mr-3 justify-content-end">
-        <button mat-raised-button class="nav-item" routerLink="/nerdFight">Rage</button>
-      </li>
-      <li class="nav-item mr-3 justify-content-end">
-        <button *ngIf='_authService.loggedInCheck();' mat-raised-button class="nav-item" routerLink="/logout">Logout</button>
-        <button *ngIf='!_authService.loggedInCheck();' mat-raised-button class="nav-item" routerLink="/login">Login</button>
-      </li>
->>>>>>> 09c4e100b7e6326bfe2ce4e2b1ac1f575de69873
     </ul>
   </div>
 </nav>
