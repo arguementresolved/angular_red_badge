@@ -28,7 +28,6 @@ import { AuthService } from './services/auth.service';
 import { BattlesService } from './services/battles.service';
 import { BattleIndexComponent } from './component/battle/battle-index/battle-index.component';
 import { CommentsService } from './services/comments.service';
-import { CommentsIndexComponent } from './components/comments/comments-index/comments-index.component';
 
 
 
@@ -39,7 +38,6 @@ const routes = [
   { path: 'nerdFight', component: NerdFightComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'comment', component: CommentsIndexComponent },
   { path: '**', component: HomePageComponent }
 ];
 
@@ -53,8 +51,6 @@ const routes = [
     HeaderComponent,
     LoginComponent,
     RegisterComponent,
-
-    CommentsIndexComponent
     BattleIndexComponent
   ],
   imports: [

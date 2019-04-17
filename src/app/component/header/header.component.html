@@ -10,8 +10,8 @@
         <button mat-raised-button class="nav-item" routerLink="/nerdFight">Rage</button>
       </li>
       <li class="nav-item mr-3">
-        <button *ngIf='_authService.loggedInCheck()' mat-raised-button class="nav-item" routerLink="/logout">Logout</button>
-        <button *ngIf='!_authService.loggedInCheck()' mat-raised-button class="nav-item" routerLink="/login">Login</button>
+        <button mat-raised-button class="nav-item" routerLink="/logout">Logout</button>
+        <button mat-raised-button class="nav-item" routerLink="/login">Login</button>
       </li>
     </ul>
 </mat-toolbar>
