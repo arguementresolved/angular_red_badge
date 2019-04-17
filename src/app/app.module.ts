@@ -32,6 +32,7 @@ import { LogoutComponent } from './component/userCrud/logout/logout.component';
 
 
 
+
 const routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'nerdFight', component: NerdFightComponent },
@@ -73,8 +74,7 @@ const routes = [
   ],
   providers: [
     AuthService,
-    BattlesService,
-    CommentsService
+    BattlesService
   ],
 
   bootstrap: [AppComponent]
