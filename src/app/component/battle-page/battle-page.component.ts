@@ -12,7 +12,7 @@ export class BattlePageComponent implements OnInit {
 
   private _fighters: FormGroup;
 
-  constructor(private _form: FormBuilder, private _authService: BattlesService) {
+  constructor(private _form: FormBuilder, private _battlesService: BattlesService) {
     this.createForm();
    }
 
@@ -28,6 +28,6 @@ export class BattlePageComponent implements OnInit {
 
   onSubmit() {
     console.log(this._fighters.value);
-    BattlesService.fight( this._fightersForm.value );
+    this._battlesService.fight( this._fighters.value );
   }
 }
