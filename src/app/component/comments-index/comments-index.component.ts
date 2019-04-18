@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
 import { CommentsService } from 'src/app/services/comments.service';
 
 @Component({
@@ -12,21 +11,33 @@ export class CommentsIndexComponent implements OnInit {
 
   private _comment: FormGroup;
 
-  constructor(private _form: FormBuilder, private _authService: AuthService, private _commentService: CommentsService) {
+  commentData: any;
+
+  constructor(private _form: FormBuilder, private _commentService: CommentsService) {
     this.createForm();
    }
 
   ngOnInit() {
 
   }
-  createForm(){
+  createForm() {
     this._comment = this._form.group({
-      comment: new FormControl
+      content: new FormControl
     });
   }
 
+<<<<<<< HEAD
   // onSubmit() {
   //   console.log(this._comment.value)
   //   this._commentService.createComment(comme)
   // }
+=======
+  onSubmit() {
+    console.log(this._comment.value)
+    this._commentService.createComment(this._comment.value).subscribe((val: any) => { 
+      this.commentData = val;
+      console.log(this.commentData);
+    });
+  }
+>>>>>>> d8ec1f00389691ef57861a78fe13dcc9cc45cba5
 }
