@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { CommentsService } from 'src/app/services/comments.service';
 
 @Component({
   selector: 'app-comments-index',
@@ -10,7 +12,7 @@ export class CommentsIndexComponent implements OnInit {
 
   private _comment: FormGroup;
 
-  constructor(private _form: FormBuilder) {
+  constructor(private _form: FormBuilder, private _authService: AuthService, private _commentService: CommentsService) {
     this.createForm();
    }
 
@@ -25,5 +27,6 @@ export class CommentsIndexComponent implements OnInit {
 
   onSubmit() {
     console.log(this._comment.value)
+    this._commentService.createComment(comme)
   }
 }
