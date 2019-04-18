@@ -17,7 +17,7 @@ export class BattlesService {
   }
 
   /// Function that sends the form data to the calc url to the api and then displays the response
-  fight(fighter1, fighter2) {
+  fight(fighter1) {
     return this._http.post(`${apiUrl}/api/v1/battles/calc`, `Bearer ${localStorage.getItem('id_token')}`);
     console.log('it did something maybe');
   }
