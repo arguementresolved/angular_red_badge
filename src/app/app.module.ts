@@ -30,8 +30,8 @@ import { BattleIndexComponent } from './component/battle/battle-index/battle-ind
 import { CommentsService } from './services/comments.service';
 import { LogoutComponent } from './component/userCrud/logout/logout.component';
 import { CommentsIndexComponent } from './component/comments-index/comments-index.component';
-
-
+import { ProfileComponent } from './component/profile/profile.component';
+import { ProfileService } from './services/profile.service';
 
 
 const routes = [
@@ -41,6 +41,7 @@ const routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'battle', component: BattlePageComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: '**', component: HomePageComponent }
 ];
 
@@ -56,7 +57,8 @@ const routes = [
     RegisterComponent,
     BattleIndexComponent,
     LogoutComponent,
-    CommentsIndexComponent
+    CommentsIndexComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +79,8 @@ const routes = [
   providers: [
     AuthService,
     BattlesService,
-    CommentsService
+    CommentsService,
+    ProfileService
   ],
 
   bootstrap: [AppComponent]
