@@ -29,6 +29,7 @@ import { BattlesService } from './services/battles.service';
 import { BattleIndexComponent } from './component/battle/battle-index/battle-index.component';
 import { CommentsService } from './services/comments.service';
 import { LogoutComponent } from './component/userCrud/logout/logout.component';
+import { CommentsIndexComponent } from './component/comments-index/comments-index.component';
 
 
 
@@ -54,7 +55,8 @@ const routes = [
     LoginComponent,
     RegisterComponent,
     BattleIndexComponent,
-    LogoutComponent
+    LogoutComponent,
+    CommentsIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,8 @@ const routes = [
   ],
   providers: [
     AuthService,
-    BattlesService
+    BattlesService,
+    CommentsService
   ],
 
   bootstrap: [AppComponent]
