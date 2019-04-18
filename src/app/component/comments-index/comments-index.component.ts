@@ -19,14 +19,14 @@ export class CommentsIndexComponent implements OnInit {
   ngOnInit() {
 
   }
-  createForm(){
+  createForm() {
     this._comment = this._form.group({
       comment: new FormControl
     });
   }
 
-  onSubmit() {
-    console.log(this._comment.value)
-    this._commentService.createComment(comme)
-  }
+  // onSubmit() {
+  //   console.log(this._comment.value)
+  //   this._commentService.createComment(comment)
+  // }
 }

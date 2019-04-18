@@ -27,7 +27,7 @@ export class AuthService {
   login(loginInfo: LoginType) {
     return this._http.post(`${apiUrl}/api/v1/users/login`, loginInfo).subscribe( (token: MyToken) => {
       this.userInfo = token;
-      localStorage.setItem('id_token', token.token);
+      localStorage.setItem('api-token', token.token);
       this.isLoggedIn.next(true);
       this._router.navigate(['/']);
     });
@@ -41,7 +41,7 @@ export class AuthService {
   }
 
   private setHeader(): HttpHeaders {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+    return new HttpHeaders().set('api-token', localStorage.getItem('id_token'));
   }
 
   getUser() {

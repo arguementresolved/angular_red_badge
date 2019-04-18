@@ -8,15 +8,15 @@ import { ProfileService } from '../../services/profile.service';
 })
 export class ProfileComponent implements OnInit {
 
-  profileData: Array<any> = [];
+  profileData: any;
 
   constructor(private _profileService: ProfileService) {
    }
 
   ngOnInit() {
-    this._profileService.getProfile().subscribe((val: Array<any>) => {
+    this._profileService.getProfile().subscribe((val: any) => {
       this.profileData = val;
-      console.log( this.profileData.values );
+      console.log( this.profileData );
     });
   }
 
