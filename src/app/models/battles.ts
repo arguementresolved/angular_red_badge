@@ -1,6 +1,6 @@
 
-
 export interface Battle {
-    k: string;
-    l: string;
+    fight_id: string;
+    fighter1: string;
+    fighter2: string;
 }
