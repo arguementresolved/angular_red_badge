@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { BattlesService } from '../../services/battles.service';
 
 @Component({
   selector: 'app-battle-page',
@@ -11,7 +12,7 @@ export class BattlePageComponent implements OnInit {
 
   private _fighters: FormGroup;
 
-  constructor(private _form: FormBuilder) {
+  constructor(private _form: FormBuilder, private _authService: BattlesService) {
     this.createForm();
    }
 
@@ -27,5 +28,6 @@ export class BattlePageComponent implements OnInit {
 
   onSubmit() {
     console.log(this._fighters.value);
+    BattlesService.fight( this._fightersForm.value );
   }
 }
