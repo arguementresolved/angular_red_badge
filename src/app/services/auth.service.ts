@@ -41,6 +41,7 @@ export class AuthService {
   }
 
   private setHeader(): HttpHeaders {
+
     return new HttpHeaders().set('Authorization', localStorage.getItem('api-token'));
   }
 
