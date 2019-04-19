@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Battle } from '../models/battles';
 
 const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
+// const apiUrl = 'http://127.0.0.1:5000';
 
 @Injectable()
 export class BattlesService {
@@ -9,16 +11,15 @@ export class BattlesService {
   constructor(private _http:HttpClient) { }
 
   getBattles() {
-    return this._http.get(`${apiUrl}/api/v1/battles`, {headers: this.getHeaders() });
+    return this._http.get(`${apiUrl}/api/v1/battles/`, {headers: this.setHeader() });
   }
 
-  private getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+  private setHeader(): HttpHeaders {
+    return new HttpHeaders().set('api-token', localStorage.getItem('api-token'));
   }
 
-  /// Function that sends the form data to the calc url to the api and then displays the response
-  fight(fighter1) {
-    return this._http.post(`${apiUrl}/api/v1/battles/calc`, `Bearer ${localStorage.getItem('id_token')}`);
+  fight(fightData: Battle) {
+    return this._http.post(`${apiUrl}/api/v1/battles/calc`, fightData, {headers: this.setHeader()});
     console.log('it did something maybe');
   }
 }

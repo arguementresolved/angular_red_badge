@@ -9,14 +9,11 @@ import { MatTableDataSource } from '@angular/material';
   styleUrls: ['./battle-index.component.css']
 })
 export class BattleIndexComponent implements OnInit {
-  columnNames = ['k', 'l'];
-  dataSource: MatTableDataSource<Battle>;
+
+  calc: any;
+
   constructor(private _batttleService: BattlesService) { }
 
-  ngOnInit() {
-    this._batttleService.getBattles().subscribe((battles:Battle[]) => {
-      this.dataSource = new MatTableDataSource<Battle>(battles);
-    });
+  ngOnInit() {}
   }
 
-}
