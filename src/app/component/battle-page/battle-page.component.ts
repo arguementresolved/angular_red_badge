@@ -12,6 +12,8 @@ export class BattlePageComponent implements OnInit {
 
   private _fighters: FormGroup;
 
+  calc: any;
+
   constructor(private _form: FormBuilder, private _battlesService: BattlesService) {
     this.createForm();
    }
@@ -27,7 +29,9 @@ export class BattlePageComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this._fighters.value);
-    this._battlesService.fight( this._fighters.value );
+    this._battlesService.fight(this._fighters.value).subscribe((val: any) => {
+      this.calc = val;
+      console.log( this.calc );
+    });
   }
 }
