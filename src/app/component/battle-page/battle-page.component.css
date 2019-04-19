@@ -5,3 +5,7 @@
 .border {
     border: 2px solid black;
 }
+
+.btnCenter {
+    float: center;
+}
