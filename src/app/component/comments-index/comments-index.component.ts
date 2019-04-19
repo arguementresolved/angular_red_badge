@@ -26,12 +26,6 @@ export class CommentsIndexComponent implements OnInit {
     });
   }
 
-<<<<<<< HEAD
-  // onSubmit() {
-  //   console.log(this._comment.value)
-  //   this._commentService.createComment(comme)
-  // }
-=======
   onSubmit() {
     console.log(this._comment.value)
     this._commentService.createComment(this._comment.value).subscribe((val: any) => { 
@@ -39,5 +33,4 @@ export class CommentsIndexComponent implements OnInit {
       console.log(this.commentData);
     });
   }
->>>>>>> d8ec1f00389691ef57861a78fe13dcc9cc45cba5
 }
