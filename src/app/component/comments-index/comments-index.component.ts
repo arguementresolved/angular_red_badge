@@ -18,7 +18,7 @@ export class CommentsIndexComponent implements OnInit {
    }
 
   ngOnInit() {
-
+    
   }
   createForm() {
     this._comment = this._form.group({
