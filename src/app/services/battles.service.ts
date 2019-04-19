@@ -20,6 +20,5 @@ export class BattlesService {
 
   fight(fightData: Battle) {
     return this._http.post(`${apiUrl}/api/v1/battles/calc`, fightData, {headers: this.setHeader()});
-    console.log('it did something maybe');
   }
 }
