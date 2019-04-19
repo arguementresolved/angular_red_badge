@@ -8,7 +8,15 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  loggedIn: boolean;
+
   constructor(private _authService: AuthService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (localStorage.getItem('api-token')) {
+      this.loggedIn = true;
+    } else {
+      this.loggedIn = false;
+    }
+  }
 }

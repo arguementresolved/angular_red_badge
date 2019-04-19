@@ -26,10 +26,10 @@
                 <div>
                     <div>
                         <h3>user recents if logged in or random fights</h3>
-                        <div *ngIf='_authService.loggedInCheck();'>
+                        <div *ngIf='loggedIn'>
                             recentFights()
                         </div>
-                        <p *ngIf='!_authService.loggedInCheck();'>
+                        <p *ngIf='!loggedIn'>
                             else randomFights()
                         </p>
                     </div>

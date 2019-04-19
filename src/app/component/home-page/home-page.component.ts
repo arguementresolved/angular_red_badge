@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { userModel } from '../../models/user';
 
 @Component({
   selector: 'app-home-page',
@@ -9,7 +8,15 @@ import { userModel } from '../../models/user';
 })
 export class HomePageComponent implements OnInit {
 
+  loggedIn: boolean;
+
   constructor(private _authService: AuthService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (localStorage.getItem('api-token')) {
+      this.loggedIn = true;
+    } else {
+      this.loggedIn = false;
+    }
+  }
 }
