@@ -32,6 +32,7 @@ import { LogoutComponent } from './component/userCrud/logout/logout.component';
 import { CommentsIndexComponent } from './component/comments-index/comments-index.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { ProfileService } from './services/profile.service';
+import { CommentViewComponent } from './component/comment-view/comment-view.component';
 
 
 const routes = [
@@ -58,7 +59,8 @@ const routes = [
     BattleIndexComponent,
     LogoutComponent,
     CommentsIndexComponent,
-    ProfileComponent
+    ProfileComponent,
+    CommentViewComponent
   ],
   imports: [
     BrowserModule,
