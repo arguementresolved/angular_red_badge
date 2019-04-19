@@ -6,12 +6,17 @@
 .navbar-btn {
     margin-right: 0.5em;
     background-color: #132584;
-    float: left;
+    float: right;
     ;
 }
 .nav-item {
     position: relative;
-    float: left;
-    left: 300px;
-    display: flex;
+    float: right;
+    /* right: 300px; */
+    display: right;
 }
+
+/* body {
+    background: url(marvel.jpg); 
+    background-position: center;
+} */

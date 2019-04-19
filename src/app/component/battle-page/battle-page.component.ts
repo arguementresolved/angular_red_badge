@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { template } from '@angular/core/src/render3';
-
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { BattlesService } from '../../services/battles.service';
 
 @Component({
   selector: 'app-battle-page',
@@ -11,8 +10,11 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 )
 export class BattlePageComponent implements OnInit {
 
+  private _fighters: FormGroup;
 
-  constructor(_form: FormBuilder) {
+  calc: any;
+
+  constructor(private _form: FormBuilder, private _battlesService: BattlesService) {
     this.createForm();
    }
 
@@ -20,13 +22,16 @@ export class BattlePageComponent implements OnInit {
   }
 
   createForm() {
-    this._registerForm = group({
+    this._fighters = this._form.group({
       fighter1: new FormControl,
       fighter2: new FormControl
     });
-
   }
+
   onSubmit() {
-    console.log(this._registerForm.value);
+    this._battlesService.fight(this._fighters.value).subscribe((val: any) => {
+      this.calc = val;
+      console.log( this.calc );
+    });
   }
 }

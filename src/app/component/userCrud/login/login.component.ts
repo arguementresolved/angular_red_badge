@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
 
-  constructor(private _form: FormBuilder, private _authService: AuthService, private _router: Router) {
+  constructor(private _form: FormBuilder, private _authService: AuthService) {
     this.createForm();
    }
 
@@ -21,13 +21,14 @@ export class LoginComponent implements OnInit {
 
   createForm() {
     this.loginForm = this._form.group({
-      email: new FormControl,
-      password: new FormControl
+      email: new FormControl(),
+      password: new FormControl()
     });
   }
 
   onSubmit() {
-    console.log('logged in lol jk');
+    console.log( this.loginForm.value );
+    this._authService.login( this.loginForm.value );
+    this._authService.loggedInCheck();
   }
-
 }

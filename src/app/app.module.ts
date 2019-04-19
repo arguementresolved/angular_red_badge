@@ -25,14 +25,24 @@ import { HeaderComponent } from './component/header/header.component';
 import { LoginComponent } from './component/userCrud/login/login.component';
 import { RegisterComponent } from './component/userCrud/register/register.component';
 import { AuthService } from './services/auth.service';
+import { BattlesService } from './services/battles.service';
+import { BattleIndexComponent } from './component/battle/battle-index/battle-index.component';
+import { CommentsService } from './services/comments.service';
+import { LogoutComponent } from './component/userCrud/logout/logout.component';
+import { CommentsIndexComponent } from './component/comments-index/comments-index.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { ProfileService } from './services/profile.service';
+import { CommentViewComponent } from './component/comment-view/comment-view.component';
 
 
 const routes = [
   { path: 'home', component: HomePageComponent },
-  { path: 'battle', component: BattlePageComponent },
   { path: 'nerdFight', component: NerdFightComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
+  { path: 'battle', component: BattlePageComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: '**', component: HomePageComponent }
 ];
 
@@ -45,7 +55,12 @@ const routes = [
     NerdFightComponent,
     HeaderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    BattleIndexComponent,
+    LogoutComponent,
+    CommentsIndexComponent,
+    ProfileComponent,
+    CommentViewComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +79,10 @@ const routes = [
     ReactiveFormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    BattlesService,
+    CommentsService,
+    ProfileService
   ],
 
   bootstrap: [AppComponent]

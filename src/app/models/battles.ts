@@ -1,5 +1,5 @@
 
-// export interface BattlesID {
-//     k: any;
-//     l: any;
-// }
+export interface Battle {
+    fighter1: string;
+    fighter2: string;
+}
