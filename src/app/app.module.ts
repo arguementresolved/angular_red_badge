@@ -33,11 +33,8 @@ import { CommentsIndexComponent } from './component/comments-index/comments-inde
 import { ProfileComponent } from './component/profile/profile.component';
 import { ProfileService } from './services/profile.service';
 import { CommentViewComponent } from './component/comment-view/comment-view.component';
-<<<<<<< HEAD
 import { RecentBattlesComponent } from './component/recent-battles/recent-battles.component';
-=======
 import { AboutComponent } from './component/about/about.component';
->>>>>>> 06d7032b377e7c527dc8f5e79af3823d137303cc
 
 
 const routes = [
@@ -66,11 +63,8 @@ const routes = [
     CommentsIndexComponent,
     ProfileComponent,
     CommentViewComponent,
-<<<<<<< HEAD
     RecentBattlesComponent
-=======
     AboutComponent
->>>>>>> 06d7032b377e7c527dc8f5e79af3823d137303cc
   ],
   imports: [
     BrowserModule,
