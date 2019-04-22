@@ -23,8 +23,6 @@ export class BattlesService {
   fight(fightData: Battle) {
     return this._http.post(`${apiUrl}/api/v1/battles/calc`, fightData, {headers: this.setHeader()});
   }
-<<<<<<< HEAD
-
   recentBattles(): Observable<any> {
     return this._http.get(`${apiUrl}/api/v1/battles`, {headers: this.setHeader()});
   }
@@ -33,6 +31,3 @@ export class BattlesService {
     return this._http.get(`${apiUrl}/api/v1/battles/userFights`, {headers: this.setHeader()});
   }
 }
-=======
-}
->>>>>>> 06d7032b377e7c527dc8f5e79af3823d137303cc
