@@ -44,7 +44,8 @@ const routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'battle', component: BattlePageComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: '**', component: HomePageComponent }
+  { path: '**', component: HomePageComponent },
+  { path: 'about', component: AboutComponent}
 ];
 
 
