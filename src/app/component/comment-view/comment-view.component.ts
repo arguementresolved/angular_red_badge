@@ -9,13 +9,16 @@ import { CommentsService } from 'src/app/services/comments.service';
 })
 export class CommentViewComponent implements OnInit {
 
-  CommentData: Array<any> = [];
+  commentData: any;
 
   constructor(private _commentService: CommentsService) { }
 
+
+
   ngOnInit() {
-    this._commentService.getComments().subscribe((val: Array<any>) => {
-      this.CommentData = val;
+    this._commentService.getComments().subscribe((val:any) => {
+      this.commentData = val;
+      console.log(this.commentData)
     });
   }
 }
