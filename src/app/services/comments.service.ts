@@ -10,13 +10,10 @@ export class CommentsService {
 
   constructor(private _http: HttpClient) { }
 
-<<<<<<< HEAD
-  getComments() {
-    return this._http.get(`${apiUrl}/api/v1/comments/`, { headers: this.setHeaders() });
-=======
+
   getComments():Observable<any>{
     return this._http.get(`${ApiUrl}/api/v1/comments/`, { headers: this.setHeaders() });
->>>>>>> 06d7032b377e7c527dc8f5e79af3823d137303cc
+ 
   }
 
   private setHeaders(): HttpHeaders {
