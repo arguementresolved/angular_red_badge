@@ -12,7 +12,7 @@ export class CommentsService {
 
 
   getComments():Observable<any>{
-    return this._http.get(`${ApiUrl}/api/v1/comments/`, { headers: this.setHeaders() });
+    return this._http.get(`${apiUrl}/api/v1/comments/`, { headers: this.setHeaders() });
  
   }
 

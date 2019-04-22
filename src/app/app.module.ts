@@ -64,7 +64,7 @@ const routes = [
     CommentsIndexComponent,
     ProfileComponent,
     CommentViewComponent,
-    RecentBattlesComponent
+    RecentBattlesComponent,
     AboutComponent
   ],
   imports: [
