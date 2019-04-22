@@ -30,7 +30,7 @@ export class CommentsIndexComponent implements OnInit {
     console.log(this._comment.value)
     this._commentService.createComment(this._comment.value).subscribe((val: any) => { 
       this.commentData = val;
-      console.log(this.commentData);
+      console.log(this.commentData.content);
     });
   }
 }
