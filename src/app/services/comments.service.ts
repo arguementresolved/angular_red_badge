@@ -9,7 +9,7 @@ export class CommentsService {
 
   constructor(private _http: HttpClient) { }
 
-  getComments(){
+  getComments():Observable<any>{
     return this._http.get(`${ApiUrl}/api/v1/comments/`, { headers: this.setHeaders() });
   }
   private setHeaders(): HttpHeaders {
