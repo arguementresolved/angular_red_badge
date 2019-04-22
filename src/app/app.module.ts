@@ -33,6 +33,7 @@ import { CommentsIndexComponent } from './component/comments-index/comments-inde
 import { ProfileComponent } from './component/profile/profile.component';
 import { ProfileService } from './services/profile.service';
 import { CommentViewComponent } from './component/comment-view/comment-view.component';
+import { RecentBattlesComponent } from './component/recent-battles/recent-battles.component';
 
 
 const routes = [
@@ -60,7 +61,8 @@ const routes = [
     LogoutComponent,
     CommentsIndexComponent,
     ProfileComponent,
-    CommentViewComponent
+    CommentViewComponent,
+    RecentBattlesComponent
   ],
   imports: [
     BrowserModule,
