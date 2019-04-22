@@ -9,3 +9,8 @@
 .btnCenter {
     float: center;
 }
+
+.lineUp {
+    text-align: center;
+    display: inline
+}
