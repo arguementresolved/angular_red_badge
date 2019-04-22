@@ -5,8 +5,13 @@
     <span class="navbar-toggler-icon" ></span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
     <div class="nav-item">
       <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" style="color:whitesmoke" routerLink="/battle">Battle</a>
+        </li>
 
         <li class="nav-item">
           <a class="nav-link" style="color:whitesmoke" routerLink="/nerdFight">Rage</a>
@@ -29,14 +34,15 @@
         </div>
       </ul>
     </div>
-  </div>
-</nav>
-
-
-<div class="container fixed-bottom mb-2">
-  <div class="row">
-    <div class="col-12 mt-4">
-      <button class="btn btn-primary nerdFight" routerLink="/battle">Fight!</button>
+    <div class="nav-item justify-content-end" *ngIf="!loggedIn">
+      <ul class="navbar-nav">
+        <li>
+          <a routerLink='/login' class="nav-link">Login</a>
+        </li>
+        <li>
+          <a routerLink='/register' class="nav-link">Register</a>
+        </li>
+      </ul>
     </div>
   </div>
-</div>
+</nav>

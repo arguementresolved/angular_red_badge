@@ -9,6 +9,7 @@ import { CommentsService } from 'src/app/services/comments.service';
 })
 export class CommentViewComponent implements OnInit {
 
+
   commentData: any;
 
   constructor(private _commentService: CommentsService) { }
@@ -16,6 +17,7 @@ export class CommentViewComponent implements OnInit {
 
 
   ngOnInit() {
+
     this._commentService.getComments().subscribe((val:any) => {
       this.commentData = val;
       console.log(this.commentData)
