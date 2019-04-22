@@ -18,9 +18,9 @@ body, html {
 }
 
 .nerdFight:hover {
-    background-color: rgb(230, 49, 18);
+    background-color: rgb(241, 4, 4);
 }
 
 .btn-primary{
-    border: rgb(230, 49, 18) 1px
+    border: rgb(241, 4, 4) 1px
 }
