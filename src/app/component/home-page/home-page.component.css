@@ -1,6 +1,5 @@
 .backgroundTexture {
     background-color: #c99797;
-    background-image: url('./asset/background.png');
     height: 98%;
     border: 2px solid black;
 }
