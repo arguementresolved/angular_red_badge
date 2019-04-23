@@ -13,18 +13,20 @@ export class RecentBattlesComponent implements OnInit {
 
   constructor(private _battlesService: BattlesService) { }
 
-  ngOnInit() {
-    this._battlesService.recentBattles().subscribe((val: any) => {
-      this.globalBattles = val;
-      console.log( this.globalBattles );
-      console.log('worked');
-    });
+  ngOnInit() {}
 
-    this._battlesService.recentUserBattles().subscribe((val: any) => {
-      this.userBattles = val;
-      console.log( this.userBattles );
-      console.log('worked');
-    });
-  }
+  // ngOnInit() {
+  //   this._battlesService.recentBattles().subscribe((val: any) => {
+  //     this.globalBattles = val;
+  //     console.log( this.globalBattles );
+  //     console.log('worked');
+  //   });
+
+  //   this._battlesService.recentUserBattles().subscribe((val: any) => {
+  //     this.userBattles = val;
+  //     console.log( this.userBattles );
+  //     console.log('worked');
+  //   });
+  // }
 
 }

@@ -8,15 +8,20 @@
 
     <div class="nav-item">
       <ul class="navbar-nav mr-auto">
-
         <li class="nav-item">
           <a class="nav-link" style="color:whitesmoke" routerLink="/battle">Battle</a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link" style="color:whitesmoke" routerLink="/nerdFight">Rage</a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link" style="color:whitesmoke" routerLink="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <div *ngIf='loggedIn'>
+            <a class="nav-link" style="color:whitesmoke" routerLink="/profile">Profile</a>
+          </div>
+        </li>
         <li class="nav-item">
           <div *ngIf='loggedIn'>
             <a class="nav-link" style="color:whitesmoke" routerLink="/logout">Logout</a>
@@ -26,8 +31,6 @@
           <li class="nav-item">
             <a class="nav-link" style="color:whitesmoke" routerLink="/login">Login</a>
           </li>
-        </div>
-        <div>
           <li class="nav-item">
             <a class="nav-link" style="color:whitesmoke" routerLink="/register">Register</a>
           </li>
