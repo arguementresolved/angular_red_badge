@@ -25,6 +25,6 @@ export class CommentsService {
   }
 
   deleteComment(something){
-    return this._http.delete(`${apiUrl}/api/v1/comments/${something}`)
+    return this._http.delete(`${apiUrl}/api/v1/comments/${something}`, { headers: this.setHeaders()});
   }
 }
