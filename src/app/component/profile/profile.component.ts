@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../../services/profile.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +11,7 @@ export class ProfileComponent implements OnInit {
 
   profileData: any;
 
-  constructor(private _profileService: ProfileService) {
+  constructor(private _profileService: ProfileService, private _authService: AuthService) {
    }
 
   ngOnInit() {
@@ -21,4 +22,8 @@ export class ProfileComponent implements OnInit {
   }
 
   onSubmit() {}
+
+  delete() {
+    this._authService.delete();
+  }
 }

@@ -7,9 +7,10 @@ import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { LoginType } from '../models/login';
 import { userModel } from '../models/user';
+import { UpdateUser } from '../models/update';
 
-const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
-// const apiUrl = 'http://127.0.0.1:5000';
+// const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
+const apiUrl = 'http://127.0.0.1:5000';
 
 @Injectable()
 export class AuthService {
@@ -19,7 +20,13 @@ export class AuthService {
 
   constructor(private _http: HttpClient, private _router: Router) { }
 
+  private setHeader(): HttpHeaders {
+
+    return new HttpHeaders().set('Authorization', localStorage.getItem('api-token'));
+  }
+
   register(regUserData: RegisterUser) {
+    this._router.navigate(['/login']);
     return this._http.post(`${apiUrl}/api/v1/users/`, regUserData);
   }
 
@@ -39,9 +46,16 @@ export class AuthService {
     this._router.navigate(['/']);
   }
 
-  private setHeader(): HttpHeaders {
+  update(update: UpdateUser) {
+    this._router.navigate(['/profile']);
+    return this._http.put(`${apiUrl}/api/v1/users/update`, update, { headers: this.setHeader() });
+  }
 
-    return new HttpHeaders().set('Authorization', localStorage.getItem('api-token'));
+  delete() {
+    console.log('made it here');
+    this._http.delete(`${apiUrl}/api/v1/users/delete`, { headers: this.setHeader()});
+    localStorage.clear();
+    console.log('SECOND');
   }
 
   getUser() {

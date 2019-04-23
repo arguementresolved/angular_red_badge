@@ -4,8 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Battle } from '../models/battles';
 import { Observable } from 'rxjs';
 
-const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
-// const apiUrl = 'http://127.0.0.1:5000';
+// const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
+const apiUrl = 'http://127.0.0.1:5000';
 
 @Injectable()
 export class BattlesService {
@@ -23,11 +23,12 @@ export class BattlesService {
   fight(fightData: Battle) {
     return this._http.post(`${apiUrl}/api/v1/battles/calc`, fightData, {headers: this.setHeader()});
   }
-  recentBattles(): Observable<any> {
-    return this._http.get(`${apiUrl}/api/v1/battles`, {headers: this.setHeader()});
-  }
 
-  recentUserBattles(): Observable<any> {
-    return this._http.get(`${apiUrl}/api/v1/battles/userFights`, {headers: this.setHeader()});
-  }
+  // recentBattles(): Observable<any> {
+  //   return this._http.get(`${apiUrl}/api/v1/battles`, {headers: this.setHeader()});
+  // }
+
+  // recentUserBattles(): Observable<any> {
+  //   return this._http.get(`${apiUrl}/api/v1/battles/userFights`, {headers: this.setHeader()});
+  // }
 }

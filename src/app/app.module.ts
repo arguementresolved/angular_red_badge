@@ -35,6 +35,7 @@ import { ProfileService } from './services/profile.service';
 import { CommentViewComponent } from './component/comment-view/comment-view.component';
 import { RecentBattlesComponent } from './component/recent-battles/recent-battles.component';
 import { AboutComponent } from './component/about/about.component';
+import { UpdateComponent } from './component/userCrud/update/update.component';
 
 
 const routes = [
@@ -44,9 +45,10 @@ const routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'battle', component: BattlePageComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: '**', component: HomePageComponent },
-  { path: 'about', component: AboutComponent}
+  { path: 'profile/update', component: UpdateComponent },
+  { path: '**', component: HomePageComponent }
 ];
 
 
@@ -65,7 +67,8 @@ const routes = [
     ProfileComponent,
     CommentViewComponent,
     RecentBattlesComponent,
-    AboutComponent
+    AboutComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

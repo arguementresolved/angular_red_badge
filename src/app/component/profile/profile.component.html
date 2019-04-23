@@ -1,13 +1,36 @@
 
-<div *ngIf='profileData' class="container">
+<div *ngIf='profileData' class="container mt-4">
   <div class="row">
     <div class="col-4">
-      <app-comments-index></app-comments-index>
     </div>
     <div class="col-4">
       <h1> Hello, {{profileData.username}} </h1>
       <h1> Email, {{profileData.email}} </h1>
     </div>
-    <div class="col-4"></div>
+    <div class="col-4">
+      <button type="button" class="btn btn-primary" [routerLink]="['/profile/update']" routerLinkActive="router-link-active" >Update</button>
+      <button type="button" class="btn btn-danger ml-4" data-toggle="modal" data-target="#exampleModalCenter">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" data-dismiss="modal" aria-label="Close">Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete your account?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)='delete()'>Delete</button>
+      </div>
+    </div>
   </div>
 </div>
