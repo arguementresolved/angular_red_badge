@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
   selector: 'app-update',
@@ -9,13 +10,19 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 })
 export class UpdateComponent implements OnInit {
 
+  profileData: any;
+
   private _updateForm: FormGroup;
 
-  constructor(private _authService: AuthService, private _form: FormBuilder) {
+  constructor(private _authService: AuthService, private _form: FormBuilder, private _profileService: ProfileService) {
     this.createForm();
    }
 
-  ngOnInit() {
+   ngOnInit() {
+    this._profileService.getProfile().subscribe((val: any) => {
+      this.profileData = val;
+      console.log( this.profileData );
+    });
   }
 
   createForm() {
@@ -29,6 +36,8 @@ export class UpdateComponent implements OnInit {
 
   onSubmit() {
     console.log(this._updateForm.value);
-    this._authService.update(this._updateForm.value);
+    this._authService.update(this._updateForm.value).subscribe(val =>{
+      console.log( val );
+    });
   }
 }

@@ -47,6 +47,7 @@ export class AuthService {
   }
 
   update(update: UpdateUser) {
+    this._router.navigate(['/profile']);
     return this._http.put(`${apiUrl}/api/v1/users/update`, update, { headers: this.setHeader() });
   }
 
