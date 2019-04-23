@@ -5,6 +5,6 @@
       <h4>
          {{item.content}}
       </h4>
-      <button class="mt-2 btn btn-danger" href="/comment/delete">Delete</button>
+      <button class="mt-2 btn btn-danger"(click)="delete_comment(item.id)">Delete</button>
    </div>
 </div>
