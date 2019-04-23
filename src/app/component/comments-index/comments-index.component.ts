@@ -18,7 +18,6 @@ export class CommentsIndexComponent implements OnInit {
    }
 
   ngOnInit() {
-    
   }
   createForm() {
     this._comment = this._form.group({
@@ -27,10 +26,10 @@ export class CommentsIndexComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this._comment.value)
-    this._commentService.createComment(this._comment.value).subscribe((val: any) => { 
+    console.log(this._comment.value);
+    this._commentService.createComment(this._comment.value).subscribe((val: any) => {
       this.commentData = val;
-      console.log(this.commentData);
+      console.log(this.commentData.content);
     });
   }
 }

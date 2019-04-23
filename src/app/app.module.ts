@@ -33,6 +33,9 @@ import { CommentsIndexComponent } from './component/comments-index/comments-inde
 import { ProfileComponent } from './component/profile/profile.component';
 import { ProfileService } from './services/profile.service';
 import { CommentViewComponent } from './component/comment-view/comment-view.component';
+import { RecentBattlesComponent } from './component/recent-battles/recent-battles.component';
+import { AboutComponent } from './component/about/about.component';
+import { UpdateComponent } from './component/userCrud/update/update.component';
 
 
 const routes = [
@@ -42,7 +45,9 @@ const routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'battle', component: BattlePageComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'profile/update', component: UpdateComponent },
   { path: '**', component: HomePageComponent }
 ];
 
@@ -60,7 +65,10 @@ const routes = [
     LogoutComponent,
     CommentsIndexComponent,
     ProfileComponent,
-    CommentViewComponent
+    CommentViewComponent,
+    RecentBattlesComponent,
+    AboutComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

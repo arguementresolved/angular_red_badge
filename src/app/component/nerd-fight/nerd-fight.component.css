@@ -1,8 +1,8 @@
 .container{
-    border: solid 1px black
+    border: solid 5px black;
+    background-color: rgb(235, 216, 112)
 }
 
 .header{
     text-align: center
 }
-

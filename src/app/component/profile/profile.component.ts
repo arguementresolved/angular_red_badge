@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../../services/profile.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +12,7 @@ export class ProfileComponent implements OnInit {
 
   profileData: any;
 
-  constructor(private _profileService: ProfileService) {
+  constructor(private _profileService: ProfileService, private _authService: AuthService) {
    }
 
   ngOnInit() {
@@ -21,4 +23,10 @@ export class ProfileComponent implements OnInit {
   }
 
   onSubmit() {}
+
+  delete() {
+    this._authService.delete().subscribe(val => {
+      localStorage.clear();
+    });
+  }
 }

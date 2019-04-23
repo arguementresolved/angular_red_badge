@@ -10,7 +10,7 @@ import { BattlesService } from '../../services/battles.service';
 )
 export class BattlePageComponent implements OnInit {
 
-  private _fighters: FormGroup;
+  public _fighters: FormGroup;
 
   calc: any;
 

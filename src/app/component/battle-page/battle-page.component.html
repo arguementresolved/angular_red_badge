@@ -23,11 +23,48 @@
       </div>
     </div>
     <br>
+    <br>
     <div class="row">
       <div class="col-4"></div>
       <div class="col-4">
         <div class="centerDiv">
-          <button type='submit'>Simulate Fight!</button>
+          <button mat-raised-button class="btn-danger" color="primary" (click)='onSubmit()'>Simulate Fight!</button>
+          <h6>Battle Simuations take a few seconds to calculate!</h6>
+        </div>
+      </div>
+      <div class="col-4"></div>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        
+        <div class="calc">
+          <h2>{{calc}}</h2>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</form>
+<!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="loginForm"></form>
+<form #f='ngForm' (ngSubmit)='onSubmit(fighter1, fighter2)' [formGroup]='_fighters'>
+  <div class='container'>
+    <div class="row">
+      <div class='col-6 centerDiv'>
+        <textarea placeholder="Fighter 1 ID #1 - #731" name="p1" formControlName="fighter1" cols="25"rows="1"></textarea>
+      </div>
+
+      <div class="col-6 centerDiv">
+        <textarea placeholder="Fighter 2 ID #1 - #731" name="p2" formControlName="fighter2" cols="25" rows="1"></textarea>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <div class="centerDiv">
+          <button type="submit">Simulate Fight!</button>
+          
         </div>
       </div>
       <div class="col-4"></div>
@@ -43,18 +80,16 @@
       </div>
     </div>
   </div>
-</form>
+</form> -->
 
-    <div class="col-3"></div>
-    <br>
-    <br>
-    <br>
-    <div class="col-3"></div>    
-<br>
-<br>
-<br>
+   <div class="col-3"></div>
+   <br>
+   <br>
+   <br>
+   <div class="col-3"></div>
+
 <div class="centerDiv">
-  <button><a href="https://superheroapi.com/ids.html" target="_blank">Fighter ID Reference</a></button>
-</div>
 
+  <button mat-raised-button class="nav-btn" color="primary" href="https://superheroapi.com/ids.html" target="_blank">Fighter ID Reference</button>
+</div>
 
