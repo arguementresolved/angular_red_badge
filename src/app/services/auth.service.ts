@@ -9,8 +9,8 @@ import { LoginType } from '../models/login';
 import { userModel } from '../models/user';
 import { UpdateUser } from '../models/update';
 
-const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
-// const apiUrl = 'http://127.0.0.1:5000';
+// const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
+const apiUrl = 'http://127.0.0.1:5000';
 
 @Injectable()
 export class AuthService {
@@ -22,7 +22,7 @@ export class AuthService {
 
   private setHeader(): HttpHeaders {
 
-    return new HttpHeaders().set('Authorization', localStorage.getItem('api-token'));
+    return new HttpHeaders().set('api-token', localStorage.getItem('api-token'));
   }
 
   register(regUserData: RegisterUser) {
@@ -52,6 +52,7 @@ export class AuthService {
 
   delete() {
     console.log('made it here');
+    this._router.navigate(['/home']);
     return this._http.delete(`${apiUrl}/api/v1/users/delete`, { headers: this.setHeader()});
   }
 
