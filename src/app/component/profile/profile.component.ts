@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../../services/profile.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -24,9 +25,8 @@ export class ProfileComponent implements OnInit {
   onSubmit() {}
 
   delete() {
-    console.log( 'ts file' );
-    this._authService.delete();
-    localStorage.clear();
-    console.log( 'ts file 2' );
+    this._authService.delete().subscribe(val => {
+      localStorage.clear();
+    });
   }
 }

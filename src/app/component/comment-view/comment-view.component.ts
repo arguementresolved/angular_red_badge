@@ -26,7 +26,7 @@ export class CommentViewComponent implements OnInit {
   }
 
   delete_comment(ident){
-    
+
     this._commentService.deleteComment(ident).subscribe(val => {
       console.log(val)
     })
