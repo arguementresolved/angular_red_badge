@@ -30,5 +30,5 @@ export class BattlesService {
 
   // recentUserBattles(): Observable<any> {
   //   return this._http.get(`${apiUrl}/api/v1/battles/userFights`, {headers: this.setHeader()});
-  // }
+  // }home
 }
