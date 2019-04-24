@@ -1,0 +1,17 @@
+.proContainer {
+    width: 110%;
+    height: 99%;
+    border: 5px solid black;
+    margin-top: 1%;
+    padding: 1%;
+    background-color: whitesmoke;
+    
+}
+
+.backgroundPro {
+    background-color: rgb(235, 216, 112);
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    padding: 1%;
+}

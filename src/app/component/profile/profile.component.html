@@ -4,11 +4,17 @@
     <div class="col-4">
     </div>
     <div class="col-4">
-      <h1> Hello, {{profileData.username}}!</h1>
+        <div class="proContainer">
+          <div class="backgroundPro">
+      <h1 style="font-family: Comic Sans, Comic Sans MS, cursive;"> Hello, {{profileData.username}}!</h1>
       <br>
-      <h1> Email: {{profileData.email}} </h1>
+      <h1 style="font-family: Comic Sans, Comic Sans MS, cursive;"> Email: {{profileData.email}} </h1>
     </div>
+    </div>
+    </div>
+
     <div class="col-4">
+
       <button type="button" class="btn btn-primary" [routerLink]="['/profile/update']" routerLinkActive="router-link-active" >Update</button>
       <button type="button" class="btn btn-danger ml-4" data-toggle="modal" data-target="#exampleModalCenter">Delete</button>
     </div>
