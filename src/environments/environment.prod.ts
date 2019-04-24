@@ -12,5 +12,5 @@ switch (window.location.hostname) {
         break;
     default:
         // this is the local host name of your API
-        apiUrl = 'https://redbadgegroup3-api.herokuapp.com/';
+        apiUrl = 'https://redbadgegroup3-api.herokuapp.com';
 }
