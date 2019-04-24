@@ -49,7 +49,7 @@ const routes = [
   { path: 'about', component: AboutComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'profile/update', component: UpdateComponent },
-  { path: 'comments/update', component: CommentUpdateComponent },
+  { path: 'comments/update/:id', component: CommentUpdateComponent },
   { path: '**', component: HomePageComponent }
 ];
 

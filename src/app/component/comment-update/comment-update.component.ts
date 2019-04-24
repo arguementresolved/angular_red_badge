@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { CommentsService } from 'src/app/services/comments.service';
+import { CommentModel } from '../../models/commentUpdate';
 
 @Component({
   selector: 'app-comment-update',
@@ -13,14 +14,14 @@ export class CommentUpdateComponent implements OnInit {
 
   commentData: any;
 
-  constructor(private _form: FormBuilder, private _commentService: CommentsService) { }
+  constructor(private _form: FormBuilder, private _commentService: CommentsService) {
+    this.createForm();
+   }
 
   ngOnInit() {
-    this._commentService.getComments().subscribe((val: any) => {
-      this.commentData = val;
-      console.log(this.commentData);
-    });
-  }
+    this.commentData = localStorage.getItem('comment_id');
+    console.log(this.commentData);
+    }
 
   createForm() {
     this._commentUpdate = this._form.group({
@@ -29,10 +30,9 @@ export class CommentUpdateComponent implements OnInit {
   }
 
   updateComment() {
-    console.log(this.commentData);
-    console.log(this._commentUpdate.value);
-    this._commentService.updateComment(this.commentData.id, this._commentUpdate.value).subscribe((val: any) => {
+    this._commentService.updateComment(this.commentData, this._commentUpdate.value).subscribe((val: any) => {
       console.log('updated');
+      localStorage.removeItem('comment_id');
     });
   }
 }

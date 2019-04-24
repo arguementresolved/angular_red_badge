@@ -17,7 +17,7 @@ export class CommentViewComponent implements OnInit {
 
   ngOnInit() {
 
-    this._commentService.getComments().subscribe((val:any) => {
+    this._commentService.getComments().subscribe((val: any) => {
       this.commentData = val;
       console.log(this.commentData);
     });
@@ -28,5 +28,9 @@ export class CommentViewComponent implements OnInit {
       console.log(val);
     });
     console.log('===============');
+  }
+
+  updateComment(id) {
+    this._commentService.updateredirect(id);
   }
 }
