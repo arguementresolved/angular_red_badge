@@ -3,16 +3,16 @@
   <h1>Update.</h1>
   <h4>Update your information.</h4>
   <hr>
-  <form (ngSubmit)='onSubmit(f)' [formGroup]="_updateForm">
+  <form (ngSubmit)='onSubmit()' [formGroup]="_updateForm">
     <div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="Username" formControlName="username" type="username" required />
+          <input matInput placeholder="{{profileData.username}}" formControlName="username" type="username" required />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="Email" formControlName="email" type="email" required />
+          <input matInput placeholder="{{profileData.email}}" formControlName="email" type="email" required />
         </mat-form-field>
       </div>
       <div>
@@ -26,6 +26,6 @@
         </mat-form-field>
       </div>
     </div>
-    <button mat-raised-button class="nav-btn" type="submit">Register</button>
+    <button mat-raised-button class="nav-btn" type="submit">Update</button>
   </form>
 </div>

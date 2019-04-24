@@ -36,6 +36,7 @@ import { CommentViewComponent } from './component/comment-view/comment-view.comp
 import { RecentBattlesComponent } from './component/recent-battles/recent-battles.component';
 import { AboutComponent } from './component/about/about.component';
 import { UpdateComponent } from './component/userCrud/update/update.component';
+import { CommentUpdateComponent } from './component/comment-update/comment-update.component';
 
 
 const routes = [
@@ -48,6 +49,7 @@ const routes = [
   { path: 'about', component: AboutComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'profile/update', component: UpdateComponent },
+  { path: 'comments/update/:id', component: CommentUpdateComponent },
   { path: '**', component: HomePageComponent }
 ];
 
@@ -68,7 +70,8 @@ const routes = [
     CommentViewComponent,
     RecentBattlesComponent,
     AboutComponent,
-    UpdateComponent
+    UpdateComponent,
+    CommentUpdateComponent
   ],
   imports: [
     BrowserModule,
