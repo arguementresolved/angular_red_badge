@@ -8,7 +8,7 @@ import { AuthService } from '../../../services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  private _registerForm: FormGroup;
+  registerForm: FormGroup;
   constructor(private _form: FormBuilder, private _authService: AuthService) {
     this.createForm();
   }
@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
   createForm() {
-    this._registerForm = this._form.group({
+    this.registerForm = this._form.group({
       username: new FormControl,
       email: new FormControl,
       password: new FormControl,
@@ -25,9 +25,9 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this._registerForm.value);
+    console.log(this.registerForm.value);
 
     this._authService
-      .register(this._registerForm.value).subscribe(val => console.log(val));
+      .register(this.registerForm.value).subscribe(val => console.log(val));
   }
 }

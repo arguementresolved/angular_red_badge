@@ -1,5 +1,5 @@
 
-<form (ngSubmit)="onSubmit()" [formGroup]="_comment">
+<form (ngSubmit)="onSubmit()" [formGroup]="comment">
 
     <textarea placeholder="text.." name="content" formControlName="content" cols="25" rows="1"></textarea>
     <button mat-raised-button class="nav-btn mybutt" color="primary" type="submit">post</button>

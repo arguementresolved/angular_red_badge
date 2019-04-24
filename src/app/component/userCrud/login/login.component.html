@@ -15,7 +15,7 @@
   <div class="row">
       <div class="col-sm"></div>
       <div class="col-sm centerDiv">
-        <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="loginForm">
+        <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
           <div>
             <div>
               <mat-form-field>

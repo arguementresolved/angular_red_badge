@@ -9,7 +9,7 @@ import { CommentsService } from 'src/app/services/comments.service';
 })
 export class CommentsIndexComponent implements OnInit {
 
-  private _comment: FormGroup;
+  comment: FormGroup;
 
   commentData: any;
 
@@ -20,14 +20,14 @@ export class CommentsIndexComponent implements OnInit {
   ngOnInit() {
   }
   createForm() {
-    this._comment = this._form.group({
+    this.comment = this._form.group({
       content: new FormControl
     });
   }
 
   onSubmit() {
-    console.log(this._comment.value);
-    this._commentService.createComment(this._comment.value).subscribe((val: any) => {
+    console.log(this.comment.value);
+    this._commentService.createComment(this.comment.value).subscribe((val: any) => {
       this.commentData = val;
       console.log(this.commentData.content);
     });

@@ -12,7 +12,7 @@ export class UpdateComponent implements OnInit {
 
   profileData: any;
 
-  private _updateForm: FormGroup;
+  updateForm: FormGroup;
 
   constructor(private _authService: AuthService, private _form: FormBuilder, private _profileService: ProfileService) {
     this.createForm();
@@ -26,7 +26,7 @@ export class UpdateComponent implements OnInit {
   }
 
   createForm() {
-    this._updateForm = this._form.group({
+    this.updateForm = this._form.group({
       username: new FormControl,
       email: new FormControl,
       password: new FormControl,
@@ -35,8 +35,8 @@ export class UpdateComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this._updateForm.value);
-    this._authService.update(this._updateForm.value).subscribe(val =>{
+    console.log(this.updateForm.value);
+    this._authService.update(this.updateForm.value).subscribe(val =>{
       console.log( val );
     });
   }

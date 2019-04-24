@@ -1,6 +1,6 @@
 
 <div class='centerDiv mt-5'>
-  <form (ngSubmit)="updateComment()" [formGroup]="_commentUpdate">
+  <form (ngSubmit)="updateComment()" [formGroup]="commentUpdate">
     <textarea placeholder="text.." formControlName="content" cols="25" rows="1"></textarea>
     <button mat-raised-button class="nav-btn mybutt" color="primary" type="submit">Update</button>
   </form>

@@ -10,7 +10,7 @@ import { CommentModel } from '../../models/commentUpdate';
 })
 export class CommentUpdateComponent implements OnInit {
 
-  private _commentUpdate: FormGroup;
+  commentUpdate: FormGroup;
 
   commentData: any;
 
@@ -24,13 +24,13 @@ export class CommentUpdateComponent implements OnInit {
     }
 
   createForm() {
-    this._commentUpdate = this._form.group({
+    this.commentUpdate = this._form.group({
       content: new FormControl
     });
   }
 
   updateComment() {
-    this._commentService.updateComment(this.commentData, this._commentUpdate.value).subscribe((val: any) => {
+    this._commentService.updateComment(this.commentData, this.commentUpdate.value).subscribe((val: any) => {
       console.log('updated');
       localStorage.removeItem('comment_id');
     });
