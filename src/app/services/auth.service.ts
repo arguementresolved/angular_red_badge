@@ -8,8 +8,9 @@ import { Observable, Subject } from 'rxjs';
 import { LoginType } from '../models/login';
 import { userModel } from '../models/user';
 import { UpdateUser } from '../models/update';
+import { apiUrl } from '../../environments/environment.prod';
 
-const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
+// const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
 // const apiUrl = 'http://127.0.0.1:5000';
 
 @Injectable()

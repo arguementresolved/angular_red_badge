@@ -3,8 +3,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Battle } from '../models/battles';
 import { Observable } from 'rxjs';
+import { apiUrl } from '../../environments/environment.prod';
 
-const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
+
+// const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
 // const apiUrl = 'http://127.0.0.1:5000';
 
 @Injectable()
