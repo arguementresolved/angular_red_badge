@@ -10,26 +10,23 @@ import { identifierModuleUrl } from '@angular/compiler';
 })
 export class CommentViewComponent implements OnInit {
 
-
   commentData: any;
 
   constructor(private _commentService: CommentsService) { }
-
 
 
   ngOnInit() {
 
     this._commentService.getComments().subscribe((val:any) => {
       this.commentData = val;
-      console.log(this.commentData)
+      console.log(this.commentData);
     });
   }
 
-  delete_comment(ident){
-
+  delete_comment(ident) {
     this._commentService.deleteComment(ident).subscribe(val => {
-      console.log(val)
-    })
-    console.log('===============')
+      console.log(val);
+    });
+    console.log('===============');
   }
 }

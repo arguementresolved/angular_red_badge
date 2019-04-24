@@ -3,4 +3,8 @@
     background-image:url('copied image address');
     background-position:50% 50%;
   } */
-  
+
+.myButt:hover {
+  text-decoration: none;
+  border-bottom: 2px solid white;
+}
