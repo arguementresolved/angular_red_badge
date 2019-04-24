@@ -1,6 +1,7 @@
 .container{
     border: solid 5px black;
-    background-color: rgb(235, 216, 112)
+    background-color: rgb(235, 216, 112);
+    font-family: Comic Sans, Comic Sans MS, cursive;
 }
 
 .header{
