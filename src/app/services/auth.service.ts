@@ -9,8 +9,8 @@ import { LoginType } from '../models/login';
 import { userModel } from '../models/user';
 import { UpdateUser } from '../models/update';
 
-const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
-// const apiUrl = 'http://127.0.0.1:5000';
+// const apiUrl = 'http://redbadgegroup3-api.herokuapp.com';
+const apiUrl = 'http://127.0.0.1:5000';
 
 @Injectable()
 export class AuthService {

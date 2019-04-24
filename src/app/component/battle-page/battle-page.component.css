@@ -19,3 +19,8 @@
     margin-left:60%;
     margin-right:40%
 }
+
+.myButt:hover {
+    text-decoration: none;
+    border-bottom: 2px solid white;
+}
